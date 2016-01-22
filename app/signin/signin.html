@@ -1,0 +1,43 @@
+<div flex="50" flex-xs="100" layout="column">
+  <md-card>
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">SignIn</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+      <form name="form" ng-submit="vm.submit(form.$valid)" novalidate>
+        <md-input-container class="md-icon-float md-block" flex>
+            <label>Username</label>
+            <md-icon md-font-library="material-icons">person</md-icon>
+            <input ng-model="vm.user.username" name="username" type="text" minlength="3" md-maxlength="30" required username-validation>
+            <div class="hint">more than 3 symbols, only first letter in uppercase of the word, only letters</div>
+            <div ng-messages="form.username.$error" ng-if="form.username.$touched" multiple>
+              <div ng-message="required">This is required.</div>
+              <div ng-message="incorrect">Username must contain only letters and numbers.</div>
+              <div ng-message="minlength">The name has to be more than 3 characters.</div>
+              <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+            </div>
+          </md-input-container>
+          <md-input-container class="md-icon-float md-block" flex>
+            <label>Password</label>
+            <md-icon md-font-library="material-icons">vpn_key</md-icon>
+            <input ng-model="vm.user.password" name="password" type="password" minlength="3" md-maxlength="30" required password-validation>
+            <div class="hint">between 18 and 65</div>
+            <div ng-messages="form.password.$error" ng-if="form.password.$touched" multiple>
+              <div ng-message="required">This is requirerd.</div>
+              <div ng-message="incorrect">Password must contain only letters and numbers.</div>
+              <div ng-message="minlength">The name has to be more than 3 characters.</div>
+              <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+            </div>
+          </md-input-container>
+          <div layout="column" layout-align="center">
+            <md-button type="submit" class="md-raised md-primary" aria-label="SignIn" ng-disabled="!form.$valid">Submit</md-button>
+          </div>
+      </form>
+    </md-card-content>
+    <md-card-footer layout="column" layout-align="space-around center">
+      <md-button ui-sref="forgot" aria-label="Forgot password" class="">Forgot password</md-button>
+    </md-card-footer>
+  </md-card>
+</div>

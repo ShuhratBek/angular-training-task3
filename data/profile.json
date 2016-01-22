@@ -1,0 +1,14 @@
+{
+	"data": [
+		{
+			"age": 26,
+			"birthday": "13 May 1995",
+			"greeting": "So cool"
+		}, 
+		{
+			"age": 39,
+			"birthday": "22 June 1985",
+			"greeting": ""
+		}
+	]
+}

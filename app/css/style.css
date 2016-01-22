@@ -1,0 +1,43 @@
+.content {
+	background-color: #CFD8DC;
+}
+.hint {
+	font-size: 12px;
+	line-height: 14px;
+	transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+	color: grey;
+}
+.hint.ng-hide,
+.hint.ng-enter,
+.hint.ng-leave.ng-leave-active {
+	bottom: 26px;
+	opacity: 0;
+}
+.hint.ng-leave,
+.hint.ng-enter.ng-enter-active {
+	bottom: 7px;
+	opacity: 1;
+}
+md-card-footer {
+	background-color: #ECEFF1;
+}
+.full-height {
+    height: 100%;
+    box-sizing: border-box;
+}
+md-progress-linear {
+	position: fixed;
+	z-index: 99;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+.md-avatar {
+    width: 40px;
+    height: 40px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	margin-right: 16px;
+	border-radius: 50%;
+	box-sizing: content-box;
+}
