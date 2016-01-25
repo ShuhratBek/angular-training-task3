@@ -1,0 +1,36 @@
+<toolbar>{{'Task3App.title' | translate}}</toolbar>
+<md-content class="content" layout="column" flex>
+  <div flex="50" flex-xs="100" layout="column" layout-align="center center">
+    <md-card>
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">{{'Task3App.forgot.title' | translate}}</span>
+        </md-card-title-text>
+      </md-card-title>
+      <error-box ng-if="vm.hasError">{{vm.hasError | translate}}</error-box>
+      <md-card-content>
+        <form name="form" ng-submit="vm.submit(form.$valid)" novalidate>
+          <md-input-container class="md-icon-float md-block" flex>
+            <label>{{'Task3App.form.username.name' | translate}}</label>
+            <md-icon md-font-library="material-icons">person</md-icon>
+            <input ng-model="vm.user.username" name="username" type="text" minlength="3" md-maxlength="30" required username-validation ng-disabled="vm.formDisabled">
+            <div class="hint">{{'Task3App.form.username.hint' | translate}}</div>
+            <div ng-messages="form.username.$error" ng-if="form.username.$touched" multiple>
+              <div ng-message="required">{{'Task3App.form.required' | translate}}</div>
+              <div ng-message="incorrect">{{'Task3App.form.username.incorrect' | translate}}</div>
+              <div ng-message="minlength">{{'Task3App.form.username.minLength' | translate}}</div>
+              <div ng-message="md-maxlength">{{'Task3App.form.username.maxLength' | translate}}</div>
+            </div>
+          </md-input-container>
+          <div layout="column" layout-align="center">
+            <md-button type="submit" class="md-raised md-primary" aria-label="{{'Task3App.forgot.submit' | translate}}" ng-disabled="!form.$valid || vm.formDisabled">{{'Task3App.forgot.submit' | translate}}</md-button>
+          </div>
+        </form>
+      </md-card-content>
+      <md-progress-linear md-mode="indeterminate" ng-if="vm.formDisabled" class="form-load"></md-progress-linear>
+      <md-card-footer layout="column" layout-align="space-around center">
+        <md-button ui-sref="login" aria-label="{{'Task3App.back' | translate}}">{{'Task3App.back' | translate}}</md-button>
+      </md-card-footer>
+    </md-card>
+  </div>
+</md-content>

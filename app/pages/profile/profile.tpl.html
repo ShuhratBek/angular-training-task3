@@ -1,0 +1,44 @@
+<section class="full-height" layout="row" flex>
+  <sidebar></sidebar>
+  <div layout="column" flex>
+    <toolbar>{{'Task3App.profile.title' | translate}}</toolbar>
+    <md-content class="content" layout="column" flex>
+      <div flex="50" flex-xs="100" layout="column" layout-align="center center">
+        <md-card>
+          <md-card-content class="md-padding">
+            <md-list>
+              <md-list-item class="md-2-line">
+                <md-icon md-font-library="material-icons">person</md-icon>
+                <div class="md-list-item-text" layout="column">
+                  <h3>{{vm.user.username}}</h3>
+                  <p>{{'Task3App.form.username.name' | translate}}</p>
+                </div>
+              </md-list-item>
+              <md-list-item class="md-2-line">
+                <md-icon md-font-library="material-icons">all_inclusive</md-icon>
+                <div class="md-list-item-text" layout="column">
+                  <h3>{{vm.user.age}}</h3>
+                  <p>{{'Task3App.form.age.name' | translate}}</p>
+                </div>
+              </md-list-item>
+              <md-list-item class="md-2-line">
+                  <md-icon md-font-library="material-icons">cake</md-icon>
+                <div class="md-list-item-text" layout="column">
+                  <h3>{{vm.user.birthday}}</h3>
+                  <p>{{'Task3App.form.birthday.name' | translate}}</p>
+                </div>
+              </md-list-item>
+              <md-list-item class="md-2-line">
+                  <md-icon md-font-library="material-icons">notifications</md-icon>
+                <div class="md-list-item-text" layout="column">
+                  <h3>{{vm.user.greeting}}</h3>
+                  <p>{{'Task3App.form.greeting.name' | translate}}</p>
+                </div>
+              </md-list-item>
+            </md-list>
+          </md-card-content>
+        </md-card>
+      </div>
+    </md-content>
+  </div>
+</section>

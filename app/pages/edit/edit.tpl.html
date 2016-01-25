@@ -1,0 +1,78 @@
+<section layout="row" flex>
+  <sidebar></sidebar>
+  <div layout="column" flex>
+    <toolbar>{{'Task3App.edit.title' | translate}}</toolbar>
+    <md-content class="content" layout="column" flex>
+      <div flex="50" flex-xs="100" layout="column" layout-align="center center">
+        <md-card>
+          <error-box ng-if="vm.hasError">{{vm.hasError | translate}}</error-box>
+          <md-card-content class="md-padding">
+            <form name="form" ng-submit="vm.submit(form.$valid)" novalidate>
+              <md-input-container class="md-icon-float md-block" flex>
+                <label>{{'Task3App.form.username.name' | translate}}</label>
+                <md-icon md-font-library="material-icons">person</md-icon>
+                <input ng-model="vm.user.username" name="username" type="text" required minlength="3" md-maxlength="30" username-validation disabled="">
+                <div class="hint">{{'Task3App.form.username.hint' | translate}}</div>
+                <div ng-messages="form.username.$error" ng-if="form.username.$touched" multiple>
+                  <div ng-message="required">{{'Task3App.form.required' | translate}}</div>
+                  <div ng-message="incorrect">{{'Task3App.form.username.incorrect' | translate}}</div>
+                  <div ng-message="minlength">{{'Task3App.form.username.minLength' | translate}}</div>
+                  <div ng-message="md-maxlength">{{'Task3App.form.username.maxLength' | translate}}</div>
+                </div>
+              </md-input-container>
+              <div layout-gt-xs="row">
+                <md-input-container class="md-icon-float md-icon-right md-block" flex>
+                  <label>{{'Task3App.form.password.name' | translate}}</label>
+                  <md-icon md-font-library="material-icons">vpn_key</md-icon>
+                  <input ng-model="vm.user.password" name="password" type="{{vm.pwdType}}" minlength="3" md-maxlength="30" required password-validation ng-disabled="vm.formDisabled">
+                  <div class="hint">{{'Task3App.form.password.hint' | translate}}</div>
+                  <div ng-messages="form.password.$error" ng-if="form.password.$touched" multiple>
+                    <div ng-message="required">{{'Task3App.form.required' | translate}}</div>
+                    <div ng-message="incorrect">{{'Task3App.form.password.incorrect' | translate}}</div>
+                    <div ng-message="minlength">{{'Task3App.form.password.minLength' | translate}}</div>
+                    <div ng-message="md-maxlength">{{'Task3App.form.password.maxLength' | translate}}</div>
+                  </div>
+                </md-input-container>
+                <md-button class="md-icon-button" ng-click="vm.pwdVisible()">
+                  <md-icon md-font-library="material-icons">{{vm.pwdIcon}}</md-icon>
+                </md-button>
+              </div>
+              <md-input-container class="md-icon-float md-block" flex>
+                <label>{{'Task3App.form.age.name' | translate}}</label>
+                <md-icon md-font-library="material-icons">all_inclusive</md-icon>
+                <input ng-model="vm.user.age" name="age" type="text" required age-min="18" age-max="65" age-validation ng-trim="false" ng-disabled="vm.formDisabled">
+                <div class="hint">{{'Task3App.form.age.hint' | translate}}</div>
+                <div ng-messages="form.age.$error" ng-if="form.age.$touched" multiple>
+                  <div ng-message="required">{{'Task3App.form.required' | translate}}</div>
+                  <div ng-message="noSpaces">{{'Task3App.form.age.noSpaces' | translate}}</div>
+                  <div ng-message="incorrect">{{'Task3App.form.age.incorrect' | translate}}</div>
+                    <div ng-message="ageMin">{{'Task3App.form.age.ageMin' | translate}}</div>
+                    <div ng-message="ageMax">{{'Task3App.form.age.ageMax' | translate}}</div>
+                  </div>
+                </md-input-container>
+                <md-input-container class="md-icon-float md-block" flex>
+                  <label>{{'Task3App.form.birthday.name' | translate}}</label>
+                  <md-icon md-font-library="material-icons">cake</md-icon>
+                  <input ng-model="vm.user.birthday" name="birthday" type="text" required birthday-validation ng-disabled="vm.formDisabled">
+                  <div class="hint">{{'Task3App.form.birthday.hint' | translate}}</div>
+                  <div ng-messages="form.birthday.$error" ng-if="form.birthday.$touched" multiple>
+                    <div ng-message="required">{{'Task3App.form.required' | translate}}</div>
+                    <div ng-message="incorrect">{{'Task3App.form.birthday.incorrect' | translate}}</div>
+                  </div>
+                </md-input-container>
+                <md-input-container class="md-icon-float md-block" flex>
+                  <label>{{'Task3App.form.greeting.name' | translate}}</label>
+                  <md-icon md-font-library="material-icons">notifications</md-icon>
+                  <input ng-model="vm.user.greeting" type="text" ng-disabled="vm.formDisabled">
+                </md-input-container>
+                <div layout="column" layout-align="center">
+                  <md-button type="submit" class="md-raised md-primary" aria-label="{{'Task3App.form.save' | translate}}" ng-disabled="!form.$valid || !form.$dirty || vm.formDisabled">{{'Task3App.form.save' | translate}}</md-button>
+                </div>
+            </form>  
+          </md-card-content>
+          <md-progress-linear md-mode="indeterminate" ng-if="vm.formDisabled" class="form-load"></md-progress-linear>
+        </md-card>
+      </div>
+    </md-content>
+  </div>
+</section>

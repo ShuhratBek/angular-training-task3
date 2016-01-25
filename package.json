@@ -24,9 +24,12 @@
     "angular-material": "^1.0.2",
     "angular-messages": "^1.4.8",
     "angular-sanitize": "^1.4.8",
+    "angular-translate": "^2.8.1",
     "angular-ui-router": "^0.2.15",
     "body-parser": "^1.14.2",
     "express": "^4.13.3",
-    "moment": "^2.11.1"
+    "moment": "^2.11.1",
+    "ng-idle": "^1.1.1",
+    "node-cache": "^3.0.1"
   }
 }

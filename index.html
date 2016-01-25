@@ -13,28 +13,9 @@
     <!-- Main style -->
     <link rel="stylesheet" href="./app/css/style.css">
 </head>
-<body ng-controller="MainCtrl as mc" ng-cloak>
-    <md-progress-linear md-mode="indeterminate" ng-if="loading" class="md-accent"></md-progress-linear>
-    <div layout="column" layout-fill>
-        <!-- ToolBar -->
-        <md-toolbar>
-            <div class="md-toolbar-tools">
-                <md-button ui-sref="login" aria-label="Angular Task1">Angular Task1</md-button>
-                <span flex></span>
-                <img ng-src="{{avatar}}" class="md-avatar" alt="{{globals.currentUser.username}}" ng-if="mc.isLoggedIn()" />
-                <span ng-if="mc.isLoggedIn()">{{globals.currentUser.username}}</span>
-                <span flex></span>
-                <md-button ui-sref="profile" aria-label="Profile" ng-if="mc.isLoggedIn()">Profile</md-button>
-                <md-button ui-sref="logout" aria-label="Logout" ng-if="mc.isLoggedIn()">Logout</md-button>
-            </div>
-        </md-toolbar>
-        <!-- /ToolBar -->
-        <!-- Content -->
-        <md-content class="content" layout="column" layout-align="center center" flex>
-            <div ui-view layout="row" layout-align="center center" flex layout-fill layout-xs="column"></div>
-        </md-content>
-        <!-- /Content -->
-    </div>
+<body ng-cloak>
+    <div layout="column" layout-fill ui-view></div>
+
     <script src="./node_modules/angular/angular.min.js"></script>
     <script src="./node_modules/angular-aria/angular-aria.min.js"></script>
     <script src="./node_modules/angular-animate/angular-animate.min.js"></script>
@@ -42,6 +23,9 @@
     <script src="./node_modules/angular-sanitize/angular-sanitize.min.js"></script>
     <script src="./node_modules/angular-ui-router/build/angular-ui-router.min.js"></script>
     <script src="./node_modules/angular-cookies/angular-cookies.min.js"></script>
+    <script src="./node_modules/angular-translate/dist/angular-translate.min.js"></script>
+    <script src="./node_modules/angular-translate/dist/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+    <script src="./node_modules/ng-idle/angular-idle.min.js"></script>
     <!-- Angular Material Framework JS -->
     <script src="./node_modules/angular-material/angular-material.min.js"></script>
     <!-- Moment.js for date -->
@@ -52,13 +36,18 @@
     <script src="./app/app.config.js"></script>
     <script src="./app/app.routes.js"></script>
     <script src="./app/services/userService.js"></script>
-    <script src="./app/MainCtrl.js"></script>
+    <script src="./app/directives/toolbar.js"></script>
     <script src="./app/directives/usernameValidation.js"></script>
     <script src="./app/directives/passwordValidation.js"></script>
     <script src="./app/directives/ageValidation.js"></script>
     <script src="./app/directives/birthdayValidation.js"></script>
     <script src="./app/directives/wordValidation.js"></script>
-    <script src="./app/profile/ProfileCtrl.js"></script>
-    <script src="./app/signin/SigninCtrl.js"></script>
-    <script src="./app/forgot/ForgotCtrl.js"></script>
+    <script src="./app/directives/sidebar.js"></script>
+    <script src="./app/directives/errorBox.js"></script>
+    <script src="./app/common/SidebarCtrl.js"></script>
+    <script src="./app/common/ToolbarCtrl.js"></script>
+    <script src="./app/pages/profile/ProfileCtrl.js"></script>
+    <script src="./app/pages/edit/EditCtrl.js"></script>
+    <script src="./app/pages/signin/SigninCtrl.js"></script>
+    <script src="./app/pages/forgot/ForgotCtrl.js"></script>
 </html>
